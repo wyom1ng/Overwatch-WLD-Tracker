@@ -1,4 +1,7 @@
-﻿namespace OverwatchWLDTracker
+﻿using System;
+using System.Windows.Forms;
+
+namespace OverwatchWLDTracker
 {
     partial class Format
     {
@@ -109,6 +112,7 @@
             // 
             // Format
             // 
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form_Closing);
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(455, 215);

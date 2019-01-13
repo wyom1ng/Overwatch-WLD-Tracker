@@ -21,7 +21,7 @@ namespace OverwatchWLDTracker
         void label1_MouseEnter(object sender, EventArgs e)
         {
             toolTip1.Show("%CSR% \t\t- will be replaced with your current SR\n" +
-                          "%DSR% \t\t- will be replaced with difference in SR" +
+                          "%DSR% \t\t- will be replaced with difference in SR\n" +
                           "%DRAW% \t- will be replaced with the number of draws\n" +
                           "%HERO% \t- will be replaced with your current hero\n" +
                           "%LOSS% \t- will be replaced with the number of losses\n" +
@@ -48,6 +48,12 @@ namespace OverwatchWLDTracker
         {
             textBox1.Enabled = !textBox1.Enabled;
             seperate = !seperate;
+        }
+
+        private void Form_Closing(object sender, FormClosingEventArgs e)
+        {
+            e.Cancel = true;
+            Hide();
         }
 
         private void submit_Click(object sender, EventArgs e)
