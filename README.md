@@ -48,7 +48,7 @@ This icon means that the tracker realized you're in game. For this to work you h
 
 ![OBS](https://i.imgur.com/v6uLEaw.png)
 
-In OBS add a Text (GDI+) Source and check "Read from file" in properties to add the counter.
+In OBS add a Text (GDI+) Source and check "Read from file" in properties to add the counter. The file is created automatically the first time it finds your SR.
 
 ## Credits
 
