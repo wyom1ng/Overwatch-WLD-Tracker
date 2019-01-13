@@ -46,6 +46,10 @@ This Icon means it found your SR and is ready to go.
 ![Recording](https://i.imgur.com/FhSFRbT.png)
 This icon means that the tracker realized you're in game. For this to work you have to be tabbed in to the game when it starts.
 
+![OBS](https://i.imgur.com/v6uLEaw.png)
+
+In OBS add a Text (GDI+) Source and check "Read from file" in properties to add the counter.
+
 ## Credits
 
 On the foundation of Avoid's [OverwatchTracker](https://github.com/MartinNielsenDev/OverwatchTracker)
