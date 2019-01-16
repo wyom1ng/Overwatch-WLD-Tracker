@@ -7,7 +7,7 @@ namespace OverwatchWLDTracker
 {
     public class CustomMenu : Form
     {
-        Format form = new Format();
+        Format format = new Format();
         public NotifyIcon trayIcon = new NotifyIcon();
         public ContextMenu trayMenu = new ContextMenu();
 
@@ -16,7 +16,8 @@ namespace OverwatchWLDTracker
             try
             {
                 trayMenu.MenuItems.Add("Overwatch WLD Tracker v" + Vars.version);
-                trayMenu.MenuItems.Add("Format", frmShow);
+                trayMenu.MenuItems.Add("Format", formatShow);
+                trayMenu.MenuItems.Add("Manual Override", overrideShow);
                 trayMenu.MenuItems.Add("-");
                 trayMenu.MenuItems.Add("Reset", Reset);
                 trayMenu.MenuItems.Add("Exit", OnExit);
@@ -33,6 +34,12 @@ namespace OverwatchWLDTracker
             }
         }
 
+        private void overrideShow(object sender, EventArgs e)
+        {
+            ManualOverride manualOverride = new ManualOverride();
+            manualOverride.Show();
+        }
+
         private void Reset(object sender, EventArgs e)
         {
             DialogResult result1 = MessageBox.Show("This will reset the W/L/D counter as well as your starting SR. Proceed?",
@@ -44,9 +51,9 @@ namespace OverwatchWLDTracker
             }
         }
 
-        private void frmShow(object sender, EventArgs e)
+        private void formatShow(object sender, EventArgs e)
         {
-            form.Show();
+            format.Show();
         }
 
         protected override void OnLoad(EventArgs e)

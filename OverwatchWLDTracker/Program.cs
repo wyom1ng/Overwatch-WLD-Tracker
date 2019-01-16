@@ -107,11 +107,13 @@ namespace OverwatchWLDTracker
                 FileWriter.Load();
                 FileWriter.Save();
 
-                WLD.Elims = "0";       // else they get set to empty strings, somehow
-                WLD.Damage = "0";
-                WLD.ObjK = "0";
-                WLD.Healing = "0";
-                WLD.Deaths = "0";      // TODO: figure out why
+                Vars.wld = new WLD();
+
+                Vars.wld.Elims = "0";       // else they get set to empty strings, somehow
+                Vars.wld.Damage = "0";
+                Vars.wld.ObjK = "0";
+                Vars.wld.Healing = "0";
+                Vars.wld.Deaths = "0";      // TODO: figure out why
 
                 FileWriter.Out();
                 customMenu1 = new CustomMenu();
@@ -306,9 +308,9 @@ namespace OverwatchWLDTracker
                             {
                                 firstrun = false;
                                 Functions.DebugMessage("SSR: " + srText);
-                                WLD.SSR = srText;
+                                Vars.wld.SSR = srText;
                             }
-                            WLD.CSR = srText;
+                            Vars.wld.CSR = srText;
                             FileWriter.Out();
                             Functions.DebugMessage("Recognized sr: '" + srText + "'");
                         }
@@ -382,11 +384,11 @@ namespace OverwatchWLDTracker
                                     Vars.statsCheck[3] = healingText;
                                     Vars.statsCheck[4] = deathsText;
 
-                                    WLD.Elims = elimsText;
-                                    WLD.Damage = damageText;
-                                    WLD.ObjK = objKillsText;
-                                    WLD.Healing = healingText;
-                                    WLD.Deaths = deathsText;
+                                    Vars.wld.Elims = elimsText;
+                                    Vars.wld.Damage = damageText;
+                                    Vars.wld.ObjK = objKillsText;
+                                    Vars.wld.Healing = healingText;
+                                    Vars.wld.Deaths = deathsText;
 
                                     FileWriter.Out();
                                 }
@@ -436,7 +438,7 @@ namespace OverwatchWLDTracker
                     {
                         Vars.gameData.map = mapText;
                         Functions.DebugMessage("Recognized map: '" + mapText + "'");
-                        WLD.Map = mapText;
+                        Vars.wld.Map = mapText;
                         FileWriter.Out();
                         if (mapText.Equals("Ilios") || mapText.Equals("Lijiang Tower") || mapText.Equals("Nepal") || mapText.Equals("Oasis") || mapText.Equals("Busan")) // checks if the map is KOTH
                         {
@@ -601,7 +603,7 @@ namespace OverwatchWLDTracker
                                 Vars.heroTimer.Restart();
                             }
                             currentHero = i;
-                            WLD.Hero = Vars.heroNamesReal[i];
+                            Vars.wld.Hero = Vars.heroNamesReal[i];
                             FileWriter.Out();
                             break;
                         }
@@ -675,17 +677,17 @@ namespace OverwatchWLDTracker
                         if (team1 > team2)
                         {
                             Functions.DebugMessage("WIN");
-                            WLD.Wins += 1;
+                            Vars.wld.Wins += 1;
                         }
                         else if (team1 < team2)
                         {
                             Functions.DebugMessage("DEFEAT");
-                            WLD.Losses += 1;
+                            Vars.wld.Losses += 1;
                         }
                         else 
                         {
                             Functions.DebugMessage("DRAW");
-                            WLD.Draws += 1;
+                            Vars.wld.Draws += 1;
                         }
                         FileWriter.Out();
                         currentGame = Vars.STATUS_WAITFORUPLOAD;
@@ -713,11 +715,11 @@ namespace OverwatchWLDTracker
             Vars.heroesPlayed.Clear();
             Vars.heroesTimePlayed.Clear();
 
-            WLD.Elims = "0";
-            WLD.Damage = "0";
-            WLD.ObjK = "0";
-            WLD.Healing = "0";
-            WLD.Deaths = "0";
+            Vars.wld.Elims = "0";
+            Vars.wld.Damage = "0";
+            Vars.wld.ObjK = "0";
+            Vars.wld.Healing = "0";
+            Vars.wld.Deaths = "0";
 
             FileWriter.Out();
 
@@ -760,7 +762,7 @@ namespace OverwatchWLDTracker
             }
             Vars.gameData.duration = Math.Floor(Convert.ToDouble(Vars.gameTimer.ElapsedMilliseconds / 1000)).ToString();
             Functions.DebugMessage("CSR: " + currentSR);
-            WLD.CSR = currentSR;
+            Vars.wld.CSR = currentSR;
             FileWriter.Out();
             Vars.gameData.endsr = currentSR;
         }

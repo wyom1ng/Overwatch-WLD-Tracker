@@ -138,6 +138,12 @@
     </Compile>
     <Compile Include="Functions.cs" />
     <Compile Include="GameData.cs" />
+    <Compile Include="ManualOverride.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManualOverride.Designer.cs">
+      <DependentUpon>ManualOverride.cs</DependentUpon>
+    </Compile>
     <Compile Include="NeuralNetwork\NeuroAdaline.cs" />
     <Compile Include="NeuralNetwork\NeuroBackProp.cs" />
     <Compile Include="NeuralNetwork\NeuroBAM.cs" />
@@ -150,6 +156,9 @@
     <Compile Include="Vars.cs" />
     <EmbeddedResource Include="Format.resx">
       <DependentUpon>Format.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManualOverride.resx">
+      <DependentUpon>ManualOverride.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -185,9 +194,6 @@
     <None Include="Resources\IconVisitMenu.ico" />
     <None Include="Resources\Idle.ico" />
     <EmbeddedResource Include="dlls\Newtonsoft.Json.dll" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\success.wav" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">

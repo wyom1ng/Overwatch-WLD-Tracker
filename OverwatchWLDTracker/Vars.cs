@@ -12,6 +12,7 @@ namespace OverwatchWLDTracker
     class Vars
     {
         public static Out outp;
+        public static WLD wld;
         public const int matrix = 10;
         public static string version = "2.1";
         public static bool isAdmin = false;

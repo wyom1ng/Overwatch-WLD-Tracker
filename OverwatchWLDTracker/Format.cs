@@ -13,6 +13,7 @@ namespace OverwatchWLDTracker
     public partial class Format : Form
     {
         private bool seperate = false;
+        private bool json = false;
         public Format()
         {
             InitializeComponent();
@@ -47,6 +48,8 @@ namespace OverwatchWLDTracker
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
             textBox1.Enabled = !textBox1.Enabled;
+            checkBox2.Enabled = !checkBox2.Enabled;
+
             seperate = !seperate;
         }
 
@@ -59,10 +62,11 @@ namespace OverwatchWLDTracker
         private void submit_Click(object sender, EventArgs e)
         {
             Vars.outp.Seperate = seperate;
+            Vars.outp.Json = json;
             Vars.outp.Format = textBox1.Text;
             Vars.outp.SBKeyCode = (int)numericUpDown1.Value;
             FileWriter.Save();
-            this.Hide();
+            Hide();
         }
 
         private void Format_Load(object sender, EventArgs e)
@@ -71,6 +75,14 @@ namespace OverwatchWLDTracker
             numericUpDown1.Value = Vars.outp.SBKeyCode;
             textBox1.Text = Vars.outp.Format;
             checkBox1.Checked = Vars.outp.Seperate;
+        }
+
+        private void checkBox2_CheckedChanged(object sender, EventArgs e)
+        {
+            textBox1.Enabled = !textBox1.Enabled;
+            checkBox1.Enabled = !checkBox1.Enabled;
+
+            json = !json;
         }
     }
 }

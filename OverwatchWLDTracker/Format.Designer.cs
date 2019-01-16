@@ -39,6 +39,7 @@ namespace OverwatchWLDTracker
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.submit = new System.Windows.Forms.Button();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -69,18 +70,18 @@ namespace OverwatchWLDTracker
             // checkBox1
             // 
             this.checkBox1.Appearance = System.Windows.Forms.Appearance.Button;
-            this.checkBox1.AutoSize = true;
             this.checkBox1.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.checkBox1.Location = new System.Drawing.Point(324, 8);
+            this.checkBox1.Location = new System.Drawing.Point(16, 185);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(119, 23);
+            this.checkBox1.Size = new System.Drawing.Size(214, 25);
             this.checkBox1.TabIndex = 2;
-            this.checkBox1.Text = "Write to seperate files";
+            this.checkBox1.Text = "Write to seperate txt files";
+            this.checkBox1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // submit
             // 
-            this.submit.Location = new System.Drawing.Point(16, 185);
+            this.submit.Location = new System.Drawing.Point(16, 216);
             this.submit.Name = "submit";
             this.submit.Size = new System.Drawing.Size(427, 23);
             this.submit.TabIndex = 3;
@@ -90,7 +91,7 @@ namespace OverwatchWLDTracker
             // 
             // numericUpDown1
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(198, 11);
+            this.numericUpDown1.Location = new System.Drawing.Point(323, 11);
             this.numericUpDown1.Maximum = new decimal(new int[] {
             255,
             0,
@@ -110,12 +111,24 @@ namespace OverwatchWLDTracker
             0,
             0});
             // 
+            // checkBox2
+            // 
+            this.checkBox2.Appearance = System.Windows.Forms.Appearance.Button;
+            this.checkBox2.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.checkBox2.Location = new System.Drawing.Point(236, 185);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(207, 25);
+            this.checkBox2.TabIndex = 5;
+            this.checkBox2.Text = "Write to json File";
+            this.checkBox2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.checkBox2.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
+            // 
             // Format
             // 
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form_Closing);
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(455, 215);
+            this.ClientSize = new System.Drawing.Size(455, 251);
+            this.Controls.Add(this.checkBox2);
             this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.submit);
             this.Controls.Add(this.checkBox1);
@@ -123,10 +136,11 @@ namespace OverwatchWLDTracker
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(471, 254);
-            this.MinimumSize = new System.Drawing.Size(471, 254);
+            this.MaximumSize = new System.Drawing.Size(471, 290);
+            this.MinimumSize = new System.Drawing.Size(471, 290);
             this.Name = "Format";
             this.Text = "Format";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form_Closing);
             this.Load += new System.EventHandler(this.Format_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
@@ -142,5 +156,6 @@ namespace OverwatchWLDTracker
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Button submit;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private CheckBox checkBox2;
     }
 }
