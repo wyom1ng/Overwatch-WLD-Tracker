@@ -1,37 +1,56 @@
-# Better Overwatch - A competitive match tracker
-[![Build status](https://ci.appveyor.com/api/projects/status/94bxngssk039i80q?svg=true)](https://ci.appveyor.com/project/MartinNielsenDev/overwatchtracker)
-[![Latest Release](https://img.shields.io/github/release/martinnielsendev/overwatchtracker.svg)](https://github.com/MartinNielsenDev/OverwatchTracker/releases)
+# Overwatch-WLD-Tracker
 
-Official website at http://betteroverwatch.com/
+## Introduction
 
-![better overwatch website](https://betteroverwatch.com/assets/images/website.png)
-## What does it do?
-My match tracker will seamlessly run as you play competitive Overwatch games and record your stats, such as..
-* Current skill rating
-* Eliminations
-* Objective Eliminations
-* Damage done
-* Healing done
-* Deaths
-* Played heroes
-* Final score
+My win/loss/draw tracker works automatically by utilizing computer vision. It is still a WIP but the core functionality works.
 
-... and more
+Right now... 
 
-## What does it **not** do?
-* Store or send any private information
-* Store or send any images of your screen (aside from optional playerlist at the start of the game)
-* Inject into the game
-* Read or write memory to the game
-* Send any inputs to the game
+it can:
 
-## How does it work?
-The Tracker works by looking at the game screen and applying computer vision then passing it through trained neural networks to analyze and extract data from small parts of the screen.
+* automatically determine the outcome of your game and write it to a .txt file
+* Format it's output to your desires
+* read your in game stats such as
+	* Eliminations
+	* Deaths
+	* Healing
+	* etc.
 
-All processing is done locally through this application, the server only displays the data that the tracker sends nicely for you.
+it can't:
+* register anything on a resolution different to 1920*1080
+* manually adjust the counter in case it messes up
 
-## Examples
-![games](http://betteroverwatch.com/assets/images/games.png)
-![detailed-game](http://betteroverwatch.com/assets/images/detailed-game.png)
+## How to use
 
-Live demo on my profile: http://betteroverwatch.com/user/Avoid
+![Tray Menu](https://i.imgur.com/GemFCdy.png)
+
+The application opens in tray. There are only a few options, most of which are self explanatory.
+
+![Format Menu](https://i.imgur.com/vubUVP6.png)
+
+The format option allows you to freely design your tracker.
+
+![Tool Tip](https://i.imgur.com/yqKpjjo.png)
+
+You can find a tip as to how to use it by hovering over the "Set Output Format" label.
+
+![Idle](https://i.imgur.com/MTMWhy5.png)
+This Icon means that Overwatch isn't running. Start it to continue
+
+![SR](https://i.imgur.com/BLeP1MU.png)
+This Icon means that the Tracker doesn't know your SR. Go to the Play menu to continue.
+
+![Ready](https://i.imgur.com/ASFvzR1.png)
+This Icon means it found your SR and is ready to go.
+
+![Recording](https://i.imgur.com/FhSFRbT.png)
+This icon means that the tracker realized you're in game. For this to work you have to be tabbed in to the game when it starts.
+
+![OBS](https://i.imgur.com/v6uLEaw.png)
+
+In OBS add a Text (GDI+) Source and check "Read from file" in properties to add the counter. The file is created automatically the first time it finds your SR.
+
+## Credits
+
+On the foundation of Avoid's [OverwatchTracker](https://github.com/MartinNielsenDev/OverwatchTracker)
+
